@@ -18,7 +18,7 @@ class Posko extends Model
         'kondisi_bencana',
         'status',
         'jam_operasional',
-        'pic', // ini sekarang menyimpan user_id
+        'pic', 
         'phone',
         'image_url'
     ];

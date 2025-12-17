@@ -18,6 +18,7 @@ class AuthController extends Controller
         $user = User::create([
             'email' => $request->email,
             'name' => $request->name,
+            'lokasi' => $request->lokasi,
             'password' => Hash::make($request->password),
         ]);
          return back()->with('success', 'Registration successful. Please login.');

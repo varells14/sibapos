@@ -51,6 +51,7 @@ class DashboardController extends Controller
             'status' => $request->status,
             'jam_operasional' => $request->jam_operasional,
             'pic' => $request->pic,
+            'pic_lokasi' => $request->pic_lokasi,
             'phone' => $request->phone,
             'image_url' => $imagePath,
         ]);

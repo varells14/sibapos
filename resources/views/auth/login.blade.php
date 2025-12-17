@@ -238,7 +238,14 @@
             <label>Username</label>
             <div class="input-wrapper">
               <i class="fas fa-user input-icon"></i>
-              <input type="text" name="name" placeholder="Pilih username" required>
+              <input type="text" name="name" placeholder="Masukkan username" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <div class="input-wrapper">
+                <i class="fas fa-map-marker-alt input-icon"></i>
+              <input type="text" name="lokasi" placeholder="Masukkan location" required>
             </div>
           </div>
           <div class="form-group">

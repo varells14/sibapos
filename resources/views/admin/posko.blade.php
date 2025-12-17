@@ -667,10 +667,10 @@ body {
                         <span class="condition-badge condition-{{ $kondisiClass }}">{{ $posko->kondisi_bencana }}</span>
 
                         <div class="pic-info">
-                            <div class="pic-avatar">{{ strtoupper(substr($posko->picUser->name,0,2)) }}</div>
+                            <div class="pic-avatar">{{ strtoupper(substr($posko->pic,0,2)) }}</div>
                             <div class="pic-details">
-                                <div class="pic-name">{{ $posko->picUser->name }}</div>
-                                <div class="pic-role">{{ $posko->picUser->lokasi }}</div>
+                                <div class="pic-name">{{ $posko->pic }}</div>
+                                <div class="pic-role">{{ $posko->kelurahan }}</div>
                             </div>
 
                             <div class="action-dropdown">
@@ -770,9 +770,68 @@ body {
                                             <input type="text" name="nama_posko" class="form-control" value="{{ $posko->nama_posko }}" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Kelurahan *</label>
-                                            <input type="text" name="kelurahan" class="form-control" value="{{ $posko->kelurahan }}" required>
-                                        </div>
+    <label class="form-label">Kelurahan *</label>
+    <select name="kelurahan" class="form-select" required>
+        <option value="">-- Pilih Kelurahan --</option>
+
+        {{-- PADANG UTARA --}}
+        <optgroup label="Padang Utara">
+            <option value="Gunung Pangilun" {{ old('kelurahan', $posko->kelurahan) == 'Gunung Pangilun' ? 'selected' : '' }}>
+                Gunung Pangilun
+            </option>
+            <option value="Ulak Karang Utara" {{ old('kelurahan', $posko->kelurahan) == 'Ulak Karang Utara' ? 'selected' : '' }}>
+                Ulak Karang Utara
+            </option>
+            <option value="Ulak Karang Selatan" {{ old('kelurahan', $posko->kelurahan) == 'Ulak Karang Selatan' ? 'selected' : '' }}>
+                Ulak Karang Selatan
+            </option>
+            <option value="Air Tawar Timur" {{ old('kelurahan', $posko->kelurahan) == 'Air Tawar Timur' ? 'selected' : '' }}>
+                Air Tawar Timur
+            </option>
+            <option value="Air Tawar Barat" {{ old('kelurahan', $posko->kelurahan) == 'Air Tawar Barat' ? 'selected' : '' }}>
+                Air Tawar Barat
+            </option>
+        </optgroup>
+
+        {{-- KOTO TANGAH --}}
+        <optgroup label="Koto Tangah">
+            <option value="Aie Pacah" {{ old('kelurahan', $posko->kelurahan) == 'Aie Pacah' ? 'selected' : '' }}>
+                Aie Pacah
+            </option>
+            <option value="Batang Kabung Aie Pacah" {{ old('kelurahan', $posko->kelurahan) == 'Batang Kabung Aie Pacah' ? 'selected' : '' }}>
+                Batang Kabung Aie Pacah
+            </option>
+            <option value="Dadok Tunggul Hitam" {{ old('kelurahan', $posko->kelurahan) == 'Dadok Tunggul Hitam' ? 'selected' : '' }}>
+                Dadok Tunggul Hitam
+            </option>
+            <option value="Koto Panjang Ikua Koto" {{ old('kelurahan', $posko->kelurahan) == 'Koto Panjang Ikua Koto' ? 'selected' : '' }}>
+                Koto Panjang Ikua Koto
+            </option>
+            <option value="Pasir Nan Tigo" {{ old('kelurahan', $posko->kelurahan) == 'Pasir Nan Tigo' ? 'selected' : '' }}>
+                Pasir Nan Tigo
+            </option>
+        </optgroup>
+
+        {{-- NANGGALO --}}
+        <optgroup label="Nanggalo">
+            <option value="Surau Gadang" {{ old('kelurahan', $posko->kelurahan) == 'Surau Gadang' ? 'selected' : '' }}>
+                Surau Gadang
+            </option>
+            <option value="Tabiang Banda Gadang" {{ old('kelurahan', $posko->kelurahan) == 'Tabiang Banda Gadang' ? 'selected' : '' }}>
+                Tabiang Banda Gadang
+            </option>
+        </optgroup>
+
+        {{-- LUBUK BEGALUNG --}}
+        <optgroup label="Lubuk Begalung">
+            <option value="Lubuk Begalung" {{ old('kelurahan', $posko->kelurahan) == 'Lubuk Begalung' ? 'selected' : '' }}>
+                Lubuk Begalung
+            </option>
+        </optgroup>
+
+    </select>
+</div>
+
                                         <div class="mb-3">
                                             <label class="form-label">Alamat *</label>
                                             <textarea name="alamat" class="form-control" rows="3" required>{{ $posko->alamat }}</textarea>
@@ -796,6 +855,8 @@ body {
                                             <label class="form-label">PIC *</label>
                                             <input type="text" name="pic" class="form-control" value="{{ $posko->pic }}" required>
                                         </div>
+                                        
+
                                         <div class="mb-3">
                                             <label class="form-label">Telepon *</label>
                                             <input type="text" name="phone" class="form-control" value="{{ $posko->phone }}" required>
@@ -864,12 +925,48 @@ body {
                         <!-- LEFT -->
                         <div>
                             <div class="mb-3"><label class="form-label">Nama Posko *</label><input type="text" name="nama_posko" class="form-control" required></div>
-                            <div class="mb-3"><label class="form-label">Kelurahan *</label><input type="text" name="kelurahan" class="form-control" required></div>
+                           <div class="mb-3">
+    <label class="form-label">Kelurahan *</label>
+    <select name="kelurahan" class="form-select" required>
+        <option value="" selected disabled>-- Pilih Kelurahan --</option>
+
+        {{-- PADANG UTARA --}}
+        <optgroup label="Padang Utara">
+            <option value="Gunung Pangilun">Gunung Pangilun</option>
+            <option value="Ulak Karang Utara">Ulak Karang Utara</option>
+            <option value="Ulak Karang Selatan">Ulak Karang Selatan</option>
+            <option value="Air Tawar Timur">Air Tawar Timur</option>
+            <option value="Air Tawar Barat">Air Tawar Barat</option>
+        </optgroup>
+
+        {{-- KOTO TANGAH --}}
+        <optgroup label="Koto Tangah">
+            <option value="Aie Pacah">Aie Pacah</option>
+            <option value="Batang Kabung Aie Pacah">Batang Kabung Aie Pacah</option>
+            <option value="Dadok Tunggul Hitam">Dadok Tunggul Hitam</option>
+            <option value="Koto Panjang Ikua Koto">Koto Panjang Ikua Koto</option>
+            <option value="Pasir Nan Tigo">Pasir Nan Tigo</option>
+        </optgroup>
+
+        {{-- NANGGALO --}}
+        <optgroup label="Nanggalo">
+            <option value="Surau Gadang">Surau Gadang</option>
+            <option value="Tabiang Banda Gadang">Tabiang Banda Gadang</option>
+        </optgroup>
+
+        {{-- LUBUK BEGALUNG --}}
+        <optgroup label="Lubuk Begalung">
+            <option value="Lubuk Begalung">Lubuk Begalung</option>
+        </optgroup>
+    </select>
+</div>
+
                             <div class="mb-3"><label class="form-label">Alamat *</label><textarea name="alamat" class="form-control" rows="3" required></textarea></div>
                             <div class="mb-3"><label class="form-label">Kondisi Bencana *</label><input type="text" name="kondisi_bencana" class="form-control" placeholder="Contoh: Banjir Ringan" required></div>
                             <div class="mb-3"><label class="form-label">Status *</label><select name="status" class="form-control" required><option value="">Pilih Status</option><option value="Aktif">Aktif</option><option value="Tidak Aktif">Tidak Aktif</option></select></div>
                             <div class="mb-3"><label class="form-label">Jam Operasional *</label><input type="text" name="jam_operasional" class="form-control" placeholder="Contoh: 24 Jam" required></div>
                             <div class="mb-3"><label class="form-label">PIC *</label><input type="text" name="pic" class="form-control" required></div>
+                            
                             <div class="mb-3"><label class="form-label">Telepon *</label><input type="text" name="phone" class="form-control" placeholder="Contoh: 08123456789" required></div>
                         </div>
 

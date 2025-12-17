@@ -370,10 +370,10 @@
                     </div>
                     <span class="condition-badge condition-{{ $kondisiClass }}">{{ $posko->kondisi_bencana }}</span>
                     <div class="pic-info">
-                        <div class="pic-avatar">{{ strtoupper(substr($posko->picUser->name,0,2)) }}</div>
+                        <div class="pic-avatar">{{ strtoupper(substr($posko->pic,0,2)) }}</div>
                         <div class="pic-details">
-                            <div class="pic-name">{{ $posko->picUser->name }}</div>
-                            <div class="pic-role">{{ $posko->picUser->lokasi }}</div>
+                            <div class="pic-name">{{ $posko->pic }}</div>
+                            <div class="pic-role">{{ $posko->kelurahan }}</div>
                         </div>
                     </div>
                 </div>
